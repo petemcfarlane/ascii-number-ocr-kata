@@ -39,6 +39,11 @@ class AsciiNumberTranslator
 
         return implode($numbers);
 
+        /*
+        The above could be written in one line, but I don't think
+        this is very clear to read in PHP because of the syntax,
+        so I chose to introduce intermediary local variables.
+         */
         return implode(array_map(function ($char) {
             return $this->translate($char);
         }, array_map('implode', transpose(array_map(function ($line) {
